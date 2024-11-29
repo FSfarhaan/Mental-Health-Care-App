@@ -5,7 +5,8 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignupActivity">
+    tools:context=".SignupActivity"
+    android:background="@color/white">
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -33,6 +34,7 @@
             android:layout_height="wrap_content"
             android:hint="Enter your email"
             android:layout_marginVertical="20sp"
+            android:textColorHint="@color/black"
             android:textColor="@color/black"/>
 
         <com.google.android.material.textfield.TextInputEditText
@@ -40,6 +42,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Enter your password"
+            android:textColorHint="@color/black"
             android:layout_marginVertical="20sp"
             android:textColor="@color/black"/>
 

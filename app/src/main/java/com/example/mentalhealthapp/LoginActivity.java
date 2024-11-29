@@ -2,6 +2,7 @@ package com.example.mentalhealthapp;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -51,7 +52,9 @@ public class LoginActivity extends AppCompatActivity {
                         public void onResponse(Call<Void> call, Response<Void> response) {
                             if(response.isSuccessful()) {
                                 Toast.makeText(LoginActivity.this, "Login successful", Toast.LENGTH_SHORT).show();
-                            }else{
+                                startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                                finish();
+                            } else{
                                 Toast.makeText(LoginActivity.this, "Login failed", Toast.LENGTH_SHORT).show();
                             }
                         }

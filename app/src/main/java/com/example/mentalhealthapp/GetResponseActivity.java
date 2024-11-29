@@ -1,5 +1,6 @@
 package com.example.mentalhealthapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -12,6 +13,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -33,15 +35,19 @@ public class GetResponseActivity extends AppCompatActivity {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
 
+            Intent intent = getIntent();
+
             getResponses = findViewById(R.id.getResponses);
             responseText = findViewById(R.id.responseText);
 
             getResponses.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    List<Integer> responseArray = List.of(3, 3, 3, 3, 3,
-                            3, 3, 3, 3, 3,
-                            3 ,3 ,3 ,3 , 3);
+//                    List<Integer> responseArray = List.of(3, 3, 3, 3, 3,
+//                            3, 3, 3, 3, 3,
+//                            3 ,3 ,3 ,3 , 3);
+
+                    ArrayList<Integer> responseArray= intent.getIntegerArrayListExtra("responses");
 
                     Map<String, Object> responses = new HashMap<>();
                     responses.put("responses", responseArray);

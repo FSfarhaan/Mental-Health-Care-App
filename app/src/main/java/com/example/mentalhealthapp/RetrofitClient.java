@@ -10,7 +10,7 @@ public class RetrofitClient {
     public static ApiService getApiService() {
         if (retrofit == null) {
             retrofit = new Retrofit.Builder()
-                    .baseUrl("http://10.0.2.2:5000/")
+                    .baseUrl("https://node-backend-jet.vercel.app/")
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
         }
@@ -20,7 +20,7 @@ public class RetrofitClient {
     public static ApiServiceFlask getApiServiceFlask() {
         if (flaskRetrofit == null) {
             flaskRetrofit = new Retrofit.Builder()
-                    .baseUrl("http://10.0.2.2:5000/") // Flask API URL (localhost for emulator)
+                    .baseUrl("https://unit3test1.pythonanywhere.com/") // Flask API URL (localhost for emulator)
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
         }
