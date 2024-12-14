@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_selector">
+
+    <!-- App Title -->
+    <TextView
+        android:id="@+id/chatbot_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_centerHorizontal="true"
+        android:text="My Chatbot"
+        android:textColor="?attr/colorPrimary"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:alpha="0.0"
+        android:animation="@anim/fade_in" />
+
+    <!-- Chat Display Area -->
+    <ListView
+        android:id="@+id/chat_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/message_input_container"
+        android:layout_below="@id/chatbot_title"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="8dp"
+        android:padding="8dp" />
+
+    <!-- Message Input Area -->
+    <LinearLayout
+        android:id="@+id/message_input_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:background="@drawable/input_background_selector"
+        android:padding="8dp"
+        android:elevation="6dp">
+
+        <!-- Message Input Field -->
+        <EditText
+            android:id="@+id/message_input"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:hint="Type your message..."
+            android:background="@drawable/rounded_edit_text_dark"
+            android:padding="12dp"
+            android:textColor="?attr/textColorPrimary"
+            android:textColorHint="?attr/textColorHint"
+            android:inputType="text" />
+
+        <!-- Send Button -->
+        <ImageButton
+            android:id="@+id/send_button"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/rounded_button"
+            android:src="@drawable/ic_send"
+            android:contentDescription="Send Message"
+            android:tint="@android:color/white"
+            android:scaleType="centerInside"
+            android:animation="@anim/scale_up" />
+    </LinearLayout>
+</RelativeLayout>
+
